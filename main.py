@@ -32,10 +32,19 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return
-'''<html>
+    return '''<html>
         <title>Test Title</title>
-            <head></head>
+            <head>
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-W66F3F1E6H');
+                </script>
+            </head>
                 <body><h1>Hello Bizarro World again!!!<h1>
                 </body>
     </html>'''
