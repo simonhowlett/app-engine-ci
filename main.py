@@ -45,7 +45,13 @@ def hello():
                     gtag('config', 'G-W66F3F1E6H');
                 </script>
             </head>
-                <body><h1>Hello Bizarro World again!!!<h1>
+                <body>
+                <table witdth='100%'border=0>
+                <tr><td width='30%'><h1><center>
+                <br />
+                <br />
+                Nothing to see here, yet.</center><h1></td></tr>
+                </table>
                 </body>
     </html>'''
 
