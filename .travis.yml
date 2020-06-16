@@ -6,4 +6,4 @@ install:
 script:
   - echo "testing starts here"
   - echo $PWD
-  - python /test/tests_math.py
+  - python test/test_math.py
