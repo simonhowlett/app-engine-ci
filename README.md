@@ -7,7 +7,8 @@ In the end this should be an example shell of.
 - gCloud app, python, flask, storage etc
 - CI/CD integration/reporting/unit tests etc
 - simple test automation
-- Jira integration
+- Jira integration (done)
+- GA Tracking (done)
 
 Or Something.
 
