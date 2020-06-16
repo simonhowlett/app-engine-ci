@@ -12,6 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+"""Simple CI App Example
+
+This is an initial exercise in creating a simple CI/CD workflow, it may develop
+into an actual working website if i can find some interesting purpose. 
+Expect some street art photo's or something.
+"""
+
 # [START gae_python38_app]
 from flask import Flask
 
@@ -24,7 +32,8 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello Bizarro World again!!!'
+    return '<h1>Hello Bizarro World again!!!<h1>'
+    
 
 
 if __name__ == '__main__':
