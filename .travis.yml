@@ -5,4 +5,5 @@ install:
   - pip install -r requirements.txt
 script:
   - echo "testing starts here"
+  - echo $PWD
   - python /test/tests_math.py
