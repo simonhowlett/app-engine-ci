@@ -32,9 +32,13 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return '<h1>Hello Bizarro World again!!!<h1>'
-    
-
+    return
+'''<html>
+        <title>Test Title</title>
+            <head></head>
+                <body><h1>Hello Bizarro World again!!!<h1>
+                </body>
+    </html>'''
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
