@@ -11,7 +11,7 @@ In the end this should be an example shell of.
 
 Or Something.
 
-So far..
+So far.. an extremely simple 1 pager that deploys to GAE. A dummy test or two.
 
 # Travis CI
 Builds on Travis: [![Build Status](https://travis-ci.com/simonhowlett/app-engine-ci.svg?branch=master)](https://travis-ci.com/simonhowlett/app-engine-ci)
