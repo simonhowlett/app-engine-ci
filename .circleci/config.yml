@@ -26,5 +26,3 @@ workflows:
   main:
     jobs:
       - build-and-test
-        post-steps:
-            - jira/notify
