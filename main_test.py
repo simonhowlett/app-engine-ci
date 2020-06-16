@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import main
+import unittest
 
 
 def test_index():
@@ -22,3 +23,5 @@ def test_index():
     r = client.get('/')
     assert r.status_code == 200
     assert 'Hello Bizaaro World!' in r.data.decode('utf-8')
+    
+

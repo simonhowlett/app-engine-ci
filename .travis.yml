@@ -4,5 +4,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - echo $PWD
   - python test/test_math.py
