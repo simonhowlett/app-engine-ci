@@ -15,7 +15,7 @@ class startUpTest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
 
-    def test_search_in_python_org(self):
+    def test_title_content(self):
         driver = self.driver
         driver.get("http://127.0.0.1:8080/")
         self.assertIn("Pipeline", driver.title)
