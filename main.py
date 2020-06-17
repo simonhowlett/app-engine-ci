@@ -37,7 +37,7 @@ app = Flask(__name__)
 def hello():
     """Return a friendly HTTP greeting."""
     return '''<html>
-<title>Test Title</title>
+<title>Simon Howlett Test CI Pipeline</title>
     <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
@@ -53,10 +53,11 @@ def hello():
         <table witdth='100%'border=0>
         <tr><td width='30%'><h1><center>
         <br />
-        <br />
-        Nothing to see here, yet...</center><h1></td></tr>
+        <br /><p class="content">
+        Nothing to see here, yet...</p></center><h1></td></tr>
         </table>
-        </body></html>'''
+        </body>
+    </html>'''
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
