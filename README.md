@@ -1,6 +1,6 @@
 # ci-setup
 
-Just some workflow work to get a testing architecture proven.
+Just some workflow work to get a release architecture proven.
 
 In the end this should be an example shell of.
 
