@@ -19,7 +19,8 @@ This is an initial exercise in creating a simple CI/CD workflow, it may develop
 into an actual working website if i can find some interesting purpose. 
 Expect some street art photo's or something.
 """
-
+import logging
+import os
 # [START gae_python38_app]
 from flask import Flask
 
@@ -30,30 +31,32 @@ app = Flask(__name__)
 
 
 @app.route('/')
+
+
+
 def hello():
     """Return a friendly HTTP greeting."""
     return '''<html>
-        <title>Test Title</title>
-            <head>
-                <!-- Global site tag (gtag.js) - Google Analytics -->
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
+<title>Test Title</title>
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-                    gtag('config', 'G-W66F3F1E6H');
-                </script>
-            </head>
-                <body>
-                <table witdth='100%'border=0>
-                <tr><td width='30%'><h1><center>
-                <br />
-                <br />
-                Nothing to see here, yet.</center><h1></td></tr>
-                </table>
-                </body>
-    </html>'''
+  gtag('config', 'G-W66F3F1E6H');
+</script>
+    </head>
+        <body>
+        <table witdth='100%'border=0>
+        <tr><td width='30%'><h1><center>
+        <br />
+        <br />
+        Nothing to see here, yet.</center><h1></td></tr>
+        </table>
+        </body></html>'''
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App

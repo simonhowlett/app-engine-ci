@@ -1,2 +1,7 @@
 runtime: python38
 instance_class: F1
+
+#[START gae_analytics_env_variables]
+env_variables:
+    GA_TRACKING_ID: G-W66F3F1E6H
+#[END gae_analytics_env_variables]
