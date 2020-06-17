@@ -5,7 +5,7 @@ Just some workflow work to get a testing architecture proven.
 In the end this should be an example shell of.
 
 - gCloud app, python, flask, storage etc
-- CI/CD integration/reporting/unit tests etc
+- CI/CD integration/reporting/unit tests etc (no real reason to build on both travis and circle, more than seeing the differences).
 - simple test automation
 - Jira integration (done)
 - GA Tracking (done)
