@@ -54,7 +54,7 @@ def hello():
         <tr><td width='30%'><h1><center>
         <br />
         <br />
-        Nothing to see here, yet.</center><h1></td></tr>
+        Nothing to see here, yet...</center><h1></td></tr>
         </table>
         </body></html>'''
 
