@@ -51,10 +51,14 @@ def hello():
     </head>
         <body>
         <table witdth='100%'border=0>
-        <tr><td width='30%'><h1><center>
+        <tr><td width='30%'>
         <br />
-        <br /><p class="content">
-        Nothing to see here, yet...</p></center><h1></td></tr>
+        <br />
+        <p class="content">
+        <center>Nothing to see here, yet...</center>
+        </p>
+        </td>
+        </tr>
         </table>
         </body>
     </html>'''
