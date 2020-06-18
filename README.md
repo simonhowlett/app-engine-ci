@@ -4,13 +4,15 @@ Just some workflow work to get a release architecture proven.
 
 In the end this should be an example shell of.
 
-- gCloud app, python, flask, storage etc
+- gCloud simple python app framework using flask. (done)
+- Image manipulation using gcloud's image framework, pulling from storage etc (tbd)
 - CI/CD integration/reporting/unit tests etc (no real reason to build on both travis and circle, more than seeing the differences).
-- simple test automation
+- simple test automation - unit tests, and webdriver, local (done), CI (tbd)
+- Test output reporting
 - Jira integration (done)
 - GA Tracking (done)
 
-Or Something.
+Or Something else.
 
 So far.. an extremely simple 1 pager that deploys to GAE. A dummy test or two.
 
