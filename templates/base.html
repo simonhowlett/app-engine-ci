@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W66F3F1E6H');
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}{% endblock %} - Homepage</title>
+    {% endblock %}
+</head>
+
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer" align="right">
+        {% block footer %}
+        <hr />
+        &copy; Copyright 2020 by <a href="http://domain.invalid/">you</a>.
+        {% endblock %}
+    </div>
+</body>
+
+</html>

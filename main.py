@@ -6,10 +6,11 @@ Expect some street art photo's or something.
 """
 
 import os
-# [START gae_python38_app]
+
 from flask import Flask
 from flask import render_template
 
+# [START gae_python38_app]
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
 app = Flask(__name__)
@@ -18,17 +19,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# Creates the info page, and takes the last paramter as the URL and passes it
-# into text.
 @app.route('/info/')
-@app.route('/info/<name>')
-def hello(name=None):
-    return render_template('info.html', name=name)
-
-# Details Page
-@app.route('/details')
-def details():
-    return 'Some Details'
+def info():
+    return render_template('info.html')
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App

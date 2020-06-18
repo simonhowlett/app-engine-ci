@@ -1,24 +1,22 @@
-<!doctype html>
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-W66F3F1E6H');
-    </script>
-</head>
-<title>Homepage</title>
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
 <table witdth='100%' border=0>
     <tr>
         <td width='30%'>
-            <br />
-            <br />
-            <p class="content">
-                <center>Nothing to see here, yet...</center>
+            <p>
+            Nothing to see here, yet...
             </p>
         </td>
     </tr>
 </table>
+{% endblock %}
+
