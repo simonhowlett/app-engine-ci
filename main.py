@@ -8,43 +8,27 @@ Expect some street art photo's or something.
 import os
 # [START gae_python38_app]
 from flask import Flask
+from flask import render_template
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
-# to run locally, run python main.py in the terminal
 app = Flask(__name__)
 
-
 @app.route('/')
+def index():
+    return render_template('index.html')
 
-def hello():
-    """Return a friendly HTTP greeting."""
-    return '''<html>
-<title>Simon Howlett Test CI Pipeline</title>
-    <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+# Creates the info page, and takes the last paramter as the URL and passes it
+# into text.
+@app.route('/info/')
+@app.route('/info/<name>')
+def hello(name=None):
+    return render_template('info.html', name=name)
 
-  gtag('config', 'G-W66F3F1E6H');
-</script>
-    </head>
-        <body>
-        <table witdth='100%'border=0>
-        <tr><td width='30%'>
-        <br />
-        <br />
-        <p class="content">
-        <center>Nothing to see here, yet...</center>
-        </p>
-        </td>
-        </tr>
-        </table>
-        </body>
-    </html>'''
+# Details Page
+@app.route('/details')
+def details():
+    return 'Some Details'
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App

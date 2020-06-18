@@ -18,7 +18,7 @@ class startUpTest(unittest.TestCase):
     def test_title_content(self):
         driver = self.driver
         driver.get("http://127.0.0.1:8080/")
-        self.assertIn("Pipeline", driver.title)
+        self.assertIn("Homepage", driver.title)
 
     def tearDown(self):
         self.driver.close()
