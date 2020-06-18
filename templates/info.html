@@ -1,8 +1,21 @@
-<!doctype html>
-<head><!-- Testing header comment --></head>
-<title>Hello from Flask</title>
-{% if name %}
-  <h1>Hello {{ name }}!</h1>
-{% else %}
-  <h1>Hello, World!</h1>
-{% endif %}
+{% extends "base.html" %}
+{% block title %}Info{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important {
+    color: #336699;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<table witdth='100%' border=0>
+  <tr>
+    <td width='30%'>
+      <p>
+      Nothing to see here, yet, certainly not any info...
+      </p>
+    </td>
+  </tr>
+</table>
+{% endblock %}
