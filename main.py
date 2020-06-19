@@ -2,7 +2,7 @@
 
 This is an initial exercise in creating a simple CI/CD workflow, it may develop
 into an actual working website if i can find some interesting purpose. 
-Expect some street art photo's or something.
+Expect some street art photo's or something.  
 """
 
 import os

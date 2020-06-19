@@ -1,23 +1,24 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Homepage{% endblock %}
 {% block head %}
 {{ super() }}
-<style type="text/css">
-    .important {
-        color: #336699;
-    }
-</style>
 {% endblock %}
 {% block content %}
-<table witdth='100%' border=0>
-    <tr>
-        <td width='50%'>
-            <p>
-            Nothing to see here, yet...
-            </p>
-        </td>
-        <td></td>
-    </tr>
-</table>
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Adventures in Street Art</h1>
+            <p class="lead text-muted">The plan is to add a small selection of street pieces I've stumbled across on my
+                travels,
+                and maybe some from closer to home in sunny Portland, OR. Mainly for vanity purposes, but also to give
+                some exposure to things
+                that don't last forever.</p>
+            <p class="lead text-muted">Check back soon, this thing's just getting started!</p>
+            <img src="{{ url_for('static', filename='images/paris_img_1.jpg') }}" width="400" />
+        </div>
+    </section>
+</main>
 {% endblock %}
+
 

@@ -24,3 +24,4 @@ env/
 test/
 .circleci/
 readme.md
+templates/base_copy.html
