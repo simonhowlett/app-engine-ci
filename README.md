@@ -8,6 +8,7 @@ In the end this should be an example shell of.
 - Image manipulation using gcloud's image framework, pulling from storage etc (tbd)
 - CI/CD integration/reporting/unit tests etc (no real reason to build on both travis and circle, more than seeing the differences).
 - simple test automation - unit tests, and webdriver, local (done), CI (tbd)
+- Bootstrap
 - Test output reporting
 - Jira integration (done)
 - GA Tracking (done)
