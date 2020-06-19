@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
     {% block head %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W66F3F1E6H"></script>
@@ -11,18 +16,91 @@
 
         gtag('config', 'G-W66F3F1E6H');
     </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/style.css') }}" />
-    <title>{% block title %}{% endblock %} - Homepage</title>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='stylesheet/album.css') }}" rel="stylesheet">
+    <title>Street art - {% block title %}{% endblock %} </title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
     {% endblock %}
 </head>
 
-<body>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer" align="right">
-        {% block footer %}
-        <hr />
-        <p>&copy; Copyright 2020 by <a href="http://domain.invalid/">you</a></p>.
-        {% endblock %}
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">Hello, I'm Simon, I like to travel to odd places when I get the chance.
+                        When I am in these places I like to document the often ephemeral street art that fills up walls and spaces.
+                    </p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://twitter.com/si_howlett" class="text-white">Follow on Twitter</a></li>
+                        <li><a href="https://www.facebook.com/simonhowlett" class="text-white">Like on Facebook</a></li>
+                        <li><a href="mailto:simonhowlett.dev@gmail.com" class="text-white">Email me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2"
+                    viewBox="0 0 24 24" focusable="false">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                    <circle cx="12" cy="13" r="4" /></svg>
+                <strong>Street Art</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+{% block content %}
+
+{% endblock %}
+{% block footer %}
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write("<script src='{{ url_for('static', filename='assets/js/vendor/jquery.slim.min.js')}}'><\/script>")</script>
+<script src="{{ url_for('static', filename='assets/dist/js/bootstrap.bundle.js') }}"></script>
+
+
+{% endblock %}
 </body>
+
 </html>
