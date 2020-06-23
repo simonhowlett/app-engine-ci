@@ -19,9 +19,10 @@ __pycache__/
 # Ignored by the build system
 /setup.cfg
 
-# Venv etc
+# Venv, spurious files etc
 env/
 test/
 .circleci/
 readme.md
 templates/base_copy.html
+app_engine.code-workspace
