@@ -24,5 +24,4 @@ env/
 test/
 .circleci/
 readme.md
-templates/base_copy.html
 app_engine.code-workspace
