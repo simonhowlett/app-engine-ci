@@ -2,5 +2,6 @@ env
 .DS_Store 
 __pycache__/
 main_test.py
+image_scrap.py
 templates/base_copy.html
 app_engine.code-workspace
