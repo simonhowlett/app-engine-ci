@@ -18,17 +18,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="{{ url_for('static', filename='images/paris_img_1.jpg') }}" width="100%" height="100%"/>
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_paris_img_1.jpg') }}" width="100%" height="100%"/>
                         <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
                             xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
                             role="img" aria-label="Placeholder: Thumbnail"> -->
-                            <title>Placeholder</title>
+                            <title>Paris 2018</title>
                         <!-- </svg> -->
                         <div class="card-body">
                             <p class="card-text">Paris, 2018.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="alert('Not Yet wired up')">View Full Size</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="paris_01" onclick="alert('Not Yet wired up')">View Full Size</button>
                                     <!-- TODO <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                 </div>
                                 
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <img src="{{ url_for('static', filename='images/unknown_tel_aviv.jpg') }}" width="100%" height="100%" />
+                            <img src="{{ url_for('static', filename='images/thumbnails/t_unknown_tel_aviv.jpg') }}" width="100%" height="100%" />
                             <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
                                                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
                                                     role="img" aria-label="Placeholder: Thumbnail"> -->
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="{{ url_for('static', filename='images/jimmy_paintz_la.jpg') }}" width="100%" height="100%" />
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_jimmy_paintz_la.jpg') }}" width="100%" height="100%" />
                         <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
                                                 xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
                                                 role="img" aria-label="Placeholder: Thumbnail"> -->
@@ -82,7 +82,6 @@
             </div>
         </div>
     </div>
-    
     </main>
 {% endblock %}
 
