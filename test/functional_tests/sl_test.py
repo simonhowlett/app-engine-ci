@@ -32,15 +32,30 @@ class simple_tests(unittest.TestCase):
         driver.get(test_url)
         self.assertIn("Homepage", driver.title)
 
-    def test_select_image(self):
+    def test_select_image_alert(self):
         driver = self.driver
         driver.get(test_url)
-        driver.find_element_by_id('paris_01').click() 
+        driver.find_element_by_id('la_2019').click()
         alert_obj = driver.switch_to.alert
-        self.assertEqual('Not Yet wirex up', alert_obj.text)
+        self.assertEqual('Not Yet wired up', alert_obj.text)
         alert_obj.accept()
+
+    def test_select_image_caption(self):
+        ''' Tests Query String for Caption is being passed and loaded
+
+        '''
+        driver = self.driver
+        driver.get(test_url)
+        driver.find_element_by_id('paris_01').click()
+        self.assertIn("Full Size Image", driver.title)
+        caption = driver.find_element_by_name('caption')
+        self.assertEqual("'Unknown, Paris, 2018'", caption.text)
+        driver.find_element_by_name('back_to_home').click()
+        self.assertIn("Homepage", driver.title)
+
+        # TODO - Image URL check via parmameter
     
-    time.sleep(10)
+    time.sleep(2)
 
     def tearDown(self):
         self.driver.close()
