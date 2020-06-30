@@ -19,16 +19,13 @@
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <img src="{{ url_for('static', filename='images/thumbnails/t_paris_img_1.jpg') }}" width="100%" height="100%"/>
-                        <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                            role="img" aria-label="Placeholder: Thumbnail"> -->
                             <title>Paris 2018</title>
-                        <!-- </svg> -->
                         <div class="card-body">
                             <p class="card-text">Paris, 2018.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="paris_01" onclick="alert('Not Yet wired up')">View Full Size</button>
+                                    <a href="image/?image=paris_img_1&caption='Unknown, Paris, 2018'"><button type="button" class="btn btn-sm btn-outline-secondary" id="paris_01">View Full Size</button></a>
+                                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary" id="paris_01" onclick="alert('Not Yet wired up')">View Full Size</button> -->
                                     <!-- TODO <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                 </div>
                                 
@@ -48,7 +45,7 @@
                                 <p class="card-text">Tel Aviv, 2019.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="alert('Not Yet wired up')">View Full Size</button>
+                                        <a href="image/?image=unknown_tel_aviv&caption='Unknown, Tel Aviv, 2019'"><button type="button" class="btn btn-sm btn-outline-secondary">View Full Size</button></a>
                                         <!-- TODO <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                 </div>
                                
@@ -68,7 +65,7 @@
                             <p class="card-text">'Jimmy Paintz', LA, 2019.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="alert('Not Yet wired up')">View Full Size</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="alert('Not Yet wired up')" id="la_2019">View Full Size</button>
                                     <!-- TODO <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                 </div>
                                 
