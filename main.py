@@ -23,6 +23,10 @@ def index():
 def info():
     return render_template('info.html')
 
+@app.route('/image/')
+def image():
+    return render_template('image.html')
+
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app. This
