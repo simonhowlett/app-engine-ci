@@ -6,8 +6,8 @@
 Simple Workflow for a release architecture proven for a simple website app build.
 
 Simple Application using:
-- gCloud simple 
-- python 
+- gCloud
+- python 3 
 - flask & jinja2
 - Bootstrap
 
