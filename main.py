@@ -1,8 +1,8 @@
 """Simple CI App Example
 
 This is an initial exercise in creating a simple CI/CD workflow, it may develop
-into an actual working website if i can find some interesting purpose. 
-Expect some street art photo's or something.  
+into an actual working website if i can find some interesting purpose.
+Expect some street art photo's or something.
 """
 
 import os
@@ -15,17 +15,21 @@ from flask import render_template
 # called `app` in `main.py`.
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/info/')
 def info():
     return render_template('info.html')
 
+
 @app.route('/image/')
 def image():
     return render_template('image.html')
+
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
