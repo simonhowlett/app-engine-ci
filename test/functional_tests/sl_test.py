@@ -4,13 +4,16 @@ Confirms website is up and is serving content
 Checks Alert Fires on selecing an image view button
 Currently these use a local webdriver instance, remote scripts will follow.
 
-TODO: Lots of tests as needed, remote executing script, logging, etc etc. 
+TODO: Lots of tests as needed, remote executing script, logging, etc etc.
 """
 
 __version__ = 0.1
 
 import unittest
-import time, os, sys, re
+import time
+import os
+import sys
+import re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -19,7 +22,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 # Local Url http://127.0.0.1:8080/
 # App Engine Url: TODO
- 
+
 test_url = "http://127.0.0.1:8080/"
 
 
@@ -54,11 +57,11 @@ class simple_tests(unittest.TestCase):
         self.assertIn("Homepage", driver.title)
 
         # TODO - Image URL check via parmameter
-    
-    time.sleep(2)
+        time.sleep(2)
 
     def tearDown(self):
         self.driver.close()
+
 
 # next lines run the tests as a suite, outputting each test's results.
 suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
