@@ -8,8 +8,8 @@
     <section class="jumbotron text-center">
         <div class="container">
             <h1>Adventures in Street Art</h1>
-            <p class="lead text-muted">The plan is to add a small selection of street pieces I've 
-                stumbled across on my travels, and some from closer to home in Portland, OR. Check back soon, this thing's just getting started!</p>
+            <p class="lead text-muted">The plan is to add a small selection of public art photographs that I've
+                stumbled across on my travels, and some from closer to home in Portland, OR.</p>
         </div>
     </section>
 
@@ -18,68 +18,118 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="{{ url_for('static', filename='images/thumbnails/t_paris_img_1.jpg') }}" width="100%" height="100%"/>
-                            <title>Paris 2018</title>
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_paris_img_1.jpg') }}" width="100%"
+                            height="100%" />
+                        <title>Unknown, Paris 2018</title>
                         <div class="card-body">
-                            <p class="card-text">Paris, 2018.</p>
+                            <p class="card-text">Unknown, Paris, 2018.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="image/?image=paris_img_1&caption='Unknown, Paris, 2018'"><button type="button" class="btn btn-sm btn-outline-secondary" id="paris_01">View Full Size</button></a>
-                                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary" id="paris_01" onclick="alert('Not Yet wired up')">View Full Size</button> -->
+                                    <a href="image/?image=paris_img_1&caption='Unknown, Paris, 2018'"><button
+                                            type="button" class="btn btn-sm btn-outline-secondary" id="paris_01">View
+                                            Full Size</button></a>
                                     <!-- TODO <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                 </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="{{ url_for('static', filename='images/thumbnails/t_unknown_tel_aviv.jpg') }}" width="100%" height="100%" />
-                            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                                                    role="img" aria-label="Placeholder: Thumbnail"> -->
-                            <title>Placeholder</title>
-                            <!-- </svg> -->
-                            <div class="card-body">
-                                <p class="card-text">Tel Aviv, 2019.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="image/?image=unknown_tel_aviv&caption='Unknown, Tel Aviv, 2019'"><button type="button" class="btn btn-sm btn-outline-secondary">View Full Size</button></a>
-                                        <!-- TODO <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-                                </div>
-                               
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="{{ url_for('static', filename='images/thumbnails/t_jimmy_paintz_la.jpg') }}" width="100%" height="100%" />
-                        <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                                                role="img" aria-label="Placeholder: Thumbnail"> -->
-                        <title>Placeholder</title>
-                        <!-- </svg> -->
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_unknown_tel_aviv.jpg') }}"
+                            width="100%" height="100%" />
+                        <title>Unknown, Tel Aviv, 2019</title>
                         <div class="card-body">
-                            <p class="card-text">'Jimmy Paintz', LA, 2019.</p>
+                            <p class="card-text">Unknown, Tel Aviv, 2019.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="alert('Not Yet wired up')" id="la_2019">View Full Size</button>
-                                    <!-- TODO <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                                    <a href="image/?image=unknown_tel_aviv&caption='Unknown, Tel Aviv, 2019'"><button
+                                            type="button" class="btn btn-sm btn-outline-secondary">View Full
+                                            Size</button></a>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
-    
-    
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_jimmy_paintz_la.jpg') }}"
+                            width="100%" height="100%" />
+                        <title>Jimmy Paintz, LA, 2019</title>
+
+                        <div class="card-body">
+                            <p class="card-text">'Jimmy Paintz', LA, 2019.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                                        onclick="alert('Intentionally Not Yet wired up')" id="la_2019">View Full
+                                        Size</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_dface-seattle.JPG') }}"
+                            width="100%" height="100%" />
+                        <title>D*Face, Seattle, 2018.</title>
+                        <div class="card-body">
+                            <p class="card-text">D*Face, Seattle, 2018.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="image/?image=dface-seattle&caption='D*Face, Seattle, 2018'"><button
+                                            type="button" class="btn btn-sm btn-outline-secondary" id="DFace_18">View
+                                            Full Size</button></a></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_karl_momen_utah.jpg') }}"
+                            width="100%" height="100%" />
+                        <title>>Karl Momen, Utah.</title>
+                        <div class="card-body">
+                            <p class="card-text">Karl Momen, Utah.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="image/?image=karl_momen_utah&caption='Karl Momen, Utah'"><button
+                                            type="button" class="btn btn-sm btn-outline-secondary">View Full
+                                            Size</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ url_for('static', filename='images/thumbnails/t_unknown_tel_aviv2.jpg') }}"
+                            width="100%" height="100%" /></a>
+                        <title>Unknown, Tel Aviv, 2019</title>
+
+                        <div class="card-body">
+                            <p class="card-text">Unknown, Tel Aviv, 2019</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="image/?image=unknown_tel_aviv2&caption='Unknown, Tel Aviv, 2019'"><button
+                                            type="button" class="btn btn-sm btn-outline-secondary" id="tel_aviv2">View
+                                            Full Size</button></a> </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </main>
+    </div>
+</main>
 {% endblock %}
 
 
