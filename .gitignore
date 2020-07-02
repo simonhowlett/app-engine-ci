@@ -1,5 +1,10 @@
-env
+env/
 .DS_Store 
+.vscode/
+node_modules/
 __pycache__/
 app_engine.code-workspace
-settings.json
+client-secret.json
+credentials.tar.gz
+credentials.tar.gz.enc
+travis_ci_scratch
