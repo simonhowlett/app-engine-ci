@@ -1,7 +1,5 @@
-# Travis CI Status: [![Build Status](https://travis-ci.com/simonhowlett/app-engine-ci.svg?branch=master)](https://travis-ci.com/simonhowlett/app-engine-ci) | # Circle CI Status: [![simonhowlett](https://circleci.com/gh/simonhowlett/app-engine-ci.svg?style=svg)](https://app.circleci.com/pipelines/github/simonhowlett/app-engine-ci)
+# Street Art Photography Website [![Build Status](https://travis-ci.com/simonhowlett/app-engine-ci.svg?branch=master)](https://travis-ci.com/simonhowlett/app-engine-ci) |  [![simonhowlett](https://circleci.com/gh/simonhowlett/app-engine-ci.svg?style=svg)](https://app.circleci.com/pipelines/github/simonhowlett/app-engine-ci)
 
-
-# Photography Website Example
 
 Simple Workflow for a release architecture proven for a simple website app build.
 
@@ -10,13 +8,13 @@ Simple Application using:
 - python 3 
 - flask & jinja2
 - Bootstrap
+ Simple test automation - webdriver tests (python, selenium), Puppeteer Tests.
+ - Google Analytics Tracking
 
 Environment:
 - appEngine
 - CI/CD integration/reporting/unit tests etc (no real reason to build on both travis and circle, more than seeing the differences).
-- Simple test automation - webdriver tests (python, selenium)
 - Jira Integration
-- Google Analytics Tracking
 
 Todo:
 - Image manipulation using gcloud's image framework, pulling from storage etc (tbd)
