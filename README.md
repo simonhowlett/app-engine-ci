@@ -22,4 +22,7 @@ Todo:
 - Test output reporting
 - Fake image ordering option, more for test examples than anything else.
 
+Notes:
+?debug=true URL Query String wil reveal a test menu, in time..
+
 
