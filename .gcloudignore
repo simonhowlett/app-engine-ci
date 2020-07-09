@@ -32,3 +32,4 @@ client-secret.json
 credentials.tar.gz
 credentials.tar.gz.enc
 travis_ci_scratch
+scrap.html
