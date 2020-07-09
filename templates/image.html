@@ -1,15 +1,3 @@
-
-<script>
-    function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-        var img_path = "{{ url_for('static', filename='images/') }}" + getUrlParameter('image') + '.jpg';
-</script>
-
-
 {% extends "base.html" %}
 {% block title %}Full Size Image{% endblock %}
 {% block head %}

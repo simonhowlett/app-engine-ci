@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+        var img_path = "{{ url_for('static', filename='images/') }}" + getUrlParameter('image') + '.jpg';
+        var debug = getUrlParameter('debug');
+
+        if (debug === 'true') {
+                $(document).ready(function () {
+                    $(".hideme").show();
+                })
+            }
+            else {
+                // alert('debug is not set');
+                // Show normal page
+                $(document).ready(function () {
+                    $(".hideme").hide();
+                })
+
+            }
+    
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A little street art photgraphy thing">
+    <meta name="description" content="A little street art photography thing, by Simon Howlett">
     <meta name="generator" content="Jekyll v4.0.1">
     {% block head %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -94,8 +120,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-<script>window.jQuery || document.write("<script src='{{ url_for('static', filename='assets/js/vendor/jquery.slim.min.js')}}'><\/script>")</script>
 <script src="{{ url_for('static', filename='assets/dist/js/bootstrap.bundle.js') }}"></script>
+
 {% endblock %}
 </body>
 
