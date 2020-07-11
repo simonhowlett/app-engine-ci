@@ -1,13 +1,14 @@
-"""Initial Test
+"""Initial Tests
 
 Confirms website is up and is serving content
 Checks Alert Fires on selecing an image view button
+Checks Debug content is hidden or available depending on URL params sent.
 Currently these use a local webdriver instance, remote scripts will follow.
 
 TODO: Lots of tests as needed, remote executing script, logging, etc etc.
 """
 
-__version__ = 0.1
+__version__ = 0.2
 
 import unittest
 import time
@@ -20,9 +21,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
-
-# Local Url http://127.0.0.1:8080/
-# App Engine Url: TODO
 
 test_url = "http://127.0.0.1:8080/"
 debug_url = test_url + "?debug=true"
