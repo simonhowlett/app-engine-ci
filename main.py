@@ -26,6 +26,10 @@ def info():
     return render_template('info.html')
 
 
+@app.route('/confirmation/', methods=['GET', 'POST'])
+def confirmation():
+        return render_template('confirmation.html')
+
 @app.route('/image/')
 def image():
     return render_template('image.html')

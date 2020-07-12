@@ -6,7 +6,24 @@
 {% endblock %}
 {% block content %}
 
+<script>
 
+  // Check Whether both password fields match
+  
+  function checkPassword(form) {
+    password1 = form.pwd.value;
+    password2 = form.cnf_pwd.value;
+
+    if (password1 != password2) {
+      alert("\nPassword did not match: Please try again...")
+      return false;
+    }
+
+    else {
+      return true;
+    }
+  } 
+</script>
 
 
 <main role="main">
@@ -14,8 +31,52 @@
     <div class="container">
       <h1>Adventures in Street Art</h1>
       <br>
-      <p class="lead text-muted">This will become a hidden-ish info page.</p>
+      <p class="lead text-muted">This will become a hidden-ish info page. For now, create a test account!</p>
+    <br />
     </div>
+    
+    <div class="album py=5 bg-light" align="center">
+    <br />
+      <form onSubmit="return checkPassword(this)" action='../confirmation/' method="post" >
+      <table border="0" cellpadding="3" border-color="#FFFFFF">
+      <tr>
+        <td><label for="firstName" class="lead text-muted" required>*First name:</label></td>
+        <td><input type="text" id="firstName" name="firstName"></td>
+      </tr>
+      <tr>
+        <td><label for="lastName" class="lead text-muted">*Last Name:</label></td>
+        <td><input type="text" id="lastName" name="lastName" required></td>
+      </tr>
+      <tr>
+        <td><label for="email" class="lead text-muted">*Email:</label></td>
+        <td><input type="email" id="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td><label for="pwd" class="lead text-muted">*Password:</label></td>
+        <td><input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+          title="Must contain at least one number and one uppercase and lowercase letter, 
+          and at least 8 characters" required></td>
+          </td>
+      </tr>
+      <tr>
+        <td><label for="cnf_pwd" class="lead text-muted">*Confirm Password:</label></td>
+        <td><input type="password" id="cnf_pwd" name="cnf_pwd" required></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="right">
+          <input type="reset" value="Reset" id="reset" name="reset" 
+            class="btn-group btn btn-sm btn-outline-secondary">
+          &nbsp;
+          <input type="submit" value="Submit" id="submit" name="submit" 
+            class="btn-group btn btn-sm btn-outline-secondary"></td>
+      </tr>
+    </table>
+    </form>
+    <br />
+   
+    </div>
+
    
   </section>
 </main>
