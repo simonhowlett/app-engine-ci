@@ -62,9 +62,9 @@ class simple_tests(unittest.TestCase):
 
 
 # next lines run the tests as a suite, outputting each test's results.
-suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
-unittest.TextTestRunner(verbosity=2).run(suite)
+# suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
+# unittest.TextTestRunner(verbosity=2).run(suite)
 
 # run from command line, replace the commented lines with those above
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()
