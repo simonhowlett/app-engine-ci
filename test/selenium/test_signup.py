@@ -57,8 +57,6 @@ class simple_tests(unittest.TestCase):
         submit.click()
         self.assertIn("Street art - Signed Up!", driver.title)
 
-        time.sleep(2)
-
     def tearDown(self):
         self.driver.close()
 

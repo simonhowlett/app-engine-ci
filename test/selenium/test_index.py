@@ -31,11 +31,17 @@ class simple_tests(unittest.TestCase):
         self.driver = webdriver.Chrome()
 
     def test_title_content(self):
+        ''' Tests page is loaded
+
+        '''
         driver = self.driver
         driver.get(test_url)
         self.assertIn("Homepage", driver.title)
 
     def test_select_image_alert(self):
+        ''' Tests alert fires
+
+        '''
         driver = self.driver
         driver.get(test_url)
         driver.find_element_by_id('la_2019').click()
@@ -54,6 +60,7 @@ class simple_tests(unittest.TestCase):
         caption = driver.find_element_by_name('caption')
         self.assertEqual('Unknown, Paris, 2018', caption.text)
         driver.find_element_by_name('back_to_home').click()
+        time.sleep(2)
         self.assertIn("Homepage", driver.title)
 
     def test_debug(self):
@@ -74,17 +81,13 @@ class simple_tests(unittest.TestCase):
         debug_content = driver.find_element_by_class_name('hideme')
         self.assertFalse(debug_content.is_displayed())
 
-        # TODO - Image URL check via parmameter
-        time.sleep(2)
-
     def tearDown(self):
         self.driver.close()
 
-
-# next lines run the tests as a suite, outputting each test's results.
-suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
-unittest.TextTestRunner(verbosity=2).run(suite)
+# # next lines run the tests as a suite, outputting each test's results.
+# suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
+# unittest.TextTestRunner(verbosity=2).run(suite)
 
 # run from command line, replace the commented lines with those above
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()
