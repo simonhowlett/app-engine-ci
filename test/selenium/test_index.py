@@ -88,6 +88,7 @@ class simple_tests(unittest.TestCase):
 # suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
 # unittest.TextTestRunner(verbosity=2).run(suite)
 
+
 # run from command line, replace the commented lines with those above
 if __name__ == "__main__":
     unittest.main()
