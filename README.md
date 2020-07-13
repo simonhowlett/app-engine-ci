@@ -23,6 +23,8 @@ Todo:
 - Fake image ordering option, more for test examples than anything else.
 
 Notes:
-?debug=true URL Query String wil reveal a test menu, in time..
+/visit/ - Collects/Displays visitor timestamps, just a simple datastore write example.
+/info/ - sample user signup form, needs to be forced to be https, and add values to datastore
+?debug=true URL Query String wil reveal a test menu, in time there will be more hidden functions.
 
 
