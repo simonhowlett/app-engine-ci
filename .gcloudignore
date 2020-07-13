@@ -25,6 +25,8 @@ test/
 .circleci/
 .vscode/
 node_modules/
+keys/
+My_User_Project-5be4cc145160.json
 helpers/
 readme.md
 app_engine.code-workspace

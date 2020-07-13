@@ -9,11 +9,14 @@ import os
 
 from flask import Flask
 from flask import render_template
+import datetime
+from google.cloud import datastore
 
 # [START gae_python38_app]
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
 app = Flask(__name__)
+datastore_client = datastore.Client()
 
 
 @app.route('/')
@@ -34,6 +37,36 @@ def confirmation():
 @app.route('/image/')
 def image():
     return render_template('image.html')
+
+
+@app.route('/visit/')
+def visit():
+    # Store the current access time in Datastore.
+    store_time(datetime.datetime.now())
+
+    # Fetch the most recent 10 access times from Datastore.
+    times = fetch_times(10)
+
+    return render_template(
+        'visit.html', times=times)
+
+
+def store_time(dt):
+    entity = datastore.Entity(key=datastore_client.key('visit'))
+    entity.update({
+        'timestamp': dt
+    })
+
+    datastore_client.put(entity)
+
+
+def fetch_times(limit):
+    query = datastore_client.query(kind='visit')
+    query.order = ['-timestamp']
+
+    times = query.fetch(limit=limit)
+
+    return times
 
 
 if __name__ == '__main__':

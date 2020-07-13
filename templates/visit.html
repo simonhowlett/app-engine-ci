@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Visitors!{% endblock %}
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+{% block content %}
+
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Adventures in Street Art</h1>
+      <br>
+      <!-- content -->
+      <p class="lead text-muted">Last 10 visits</p>
+      {% for time in times %} <pp class="lead text-muted"></p>{{ time['timestamp'] }}</p>
+      {% endfor %}
+    <br />
+    </div>
+
+  </section>
+</main>
+
+{% endblock %}

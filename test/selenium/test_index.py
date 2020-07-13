@@ -84,7 +84,7 @@ class simple_tests(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-# # next lines run the tests as a suite, outputting each test's results.
+# next lines run the tests as a suite, outputting each test's results.
 # suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
 # unittest.TextTestRunner(verbosity=2).run(suite)
 

@@ -3,6 +3,7 @@ env/
 .vscode/
 node_modules/
 __pycache__/
+keys/
 app_engine.code-workspace
 client-secret.json
 credentials.tar.gz

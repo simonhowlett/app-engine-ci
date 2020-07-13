@@ -1,4 +1,4 @@
-'''Building out a test runner app
+'''Building out a test runner wrapper
 
 '''
 
