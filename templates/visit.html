@@ -11,12 +11,17 @@
     <div class="container">
       <h1>Adventures in Street Art</h1>
       <br>
+    </div>
       <!-- content -->
       <p class="lead text-muted">Last 10 visits</p>
-      {% for time in times %} <pp class="lead text-muted"></p>{{ time['timestamp'] }}</p>
+      <div class="album py=5 bg-light" align="center">
+      <table id="visits" border=0 cellpadding="3" width=100%>
+      {% for time in times %} <tr><td align="center"><p class="lead text-muted">{{ time['timestamp'] }}</p></td></tr>
       {% endfor %}
+      </table>
     <br />
-    </div>
+  </div>
+  </div>
 
   </section>
 </main>
