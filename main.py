@@ -21,6 +21,8 @@ datastore_client = datastore.Client()
 
 @app.route('/')
 def index():
+    # Store the current access time in Datastore.
+    store_time(datetime.datetime.now())
     return render_template('index.html')
 
 
@@ -41,10 +43,7 @@ def image():
 
 @app.route('/visit/')
 def visit():
-    # Store the current access time in Datastore.
-    store_time(datetime.datetime.now())
-
-    # Fetch the most recent 10 access times from Datastore.
+    #  Fetch the most recent 10 access times from Datastore.
     times = fetch_times(10)
 
     return render_template(
