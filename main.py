@@ -45,7 +45,6 @@ def image():
 def visit():
     #  Fetch the most recent 10 access times from Datastore.
     times = fetch_times(10)
-
     return render_template(
         'visit.html', times=times)
 
