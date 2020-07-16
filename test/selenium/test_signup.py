@@ -5,25 +5,28 @@ Confirms fields can be completed
 Confirms password validation is working on identical values.
 Currently these use a local webdriver instance, remote scripts will follow.
 
-TODO: Lots of tests as needed, remote executing script, logging, etc etc.
+TODO: Commit Test Status and Timings to Cloud datastore,
+remote executing script, logging, etc etc.
 """
 
 __version__ = 0.2
 
 import unittest
-import time
 import os
 import sys
 import re
+import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
+from time import time
 
 test_url = "http://127.0.0.1:8080/info"
 debug_url = test_url + "?debug=true"
+start_time = datetime.datetime.now()
 
 
 class simple_tests(unittest.TestCase):
@@ -34,17 +37,18 @@ class simple_tests(unittest.TestCase):
         driver = self.driver
         driver.get(test_url)
         self.assertIn("Street art - Info", driver.title)
-        firstName = self.driver.find_element_by_name('firstName')
-        lastName = self.driver.find_element_by_name('lastName')
-        email = self.driver.find_element_by_name('email')
+        tStart = time()
+        firstName = self.driver.find_element_by_name(
+            'firstName').send_keys('tester')
+        lastName = self.driver.find_element_by_name(
+            'lastName').send_keys('testing')
+        email = self.driver.find_element_by_name(
+            'email').send_keys('testing@test.com')
         pwd = self.driver.find_element_by_name('pwd')
-        cnf_pwd = self.driver.find_element_by_name('cnf_pwd')
-        submit = self.driver.find_element_by_name('submit')
-        firstName.send_keys('tester')
-        lastName.send_keys('testing')
-        email.send_keys('testing@test.com')
         pwd.send_keys('8ightChar')
+        cnf_pwd = self.driver.find_element_by_name('cnf_pwd')
         cnf_pwd.send_keys('8ightchar')
+        submit = self.driver.find_element_by_name('submit')
         submit.click()
         alert_obj = driver.switch_to.alert
         self.assertEqual(
@@ -56,6 +60,19 @@ class simple_tests(unittest.TestCase):
         cnf_pwd.send_keys('8ightChar')
         submit.click()
         self.assertIn("Street art - Signed Up!", driver.title)
+        tEnd = time()
+        time_span = tEnd - tStart
+        print('Started', start_time)
+        print(f'Test: {self} took {time_span} seconds duration')
+
+    # def store_time(dt):
+        # entity = datastore.Entity(key=datastore_client.key('test_time'))
+        # entity.update({
+        #     'timestamp': start_time,
+        #     'testname': unittest.TestCase,
+        #     'timeSpan': time_span
+        #     })
+        # datastore_client.put(entity)
 
     def tearDown(self):
         self.driver.close()

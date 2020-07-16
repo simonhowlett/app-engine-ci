@@ -3,3 +3,17 @@ instance_class: F1
 automatic_scaling:
     max_instances: 1
 
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+
+  handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /bootstrap
+  static_dir: bootstrap
+
