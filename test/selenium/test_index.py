@@ -21,6 +21,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 test_url = "http://127.0.0.1:8080/"
 debug_url = test_url + "?debug=true"
@@ -37,6 +39,21 @@ class simple_tests(unittest.TestCase):
         driver = self.driver
         driver.get(test_url)
         self.assertIn("Homepage", driver.title)
+
+    def test_menu_Access(self):
+        ''' Tests drop down menu doesn't break
+
+        '''
+        driver = self.driver
+        driver.get(test_url)
+        driver.find_element_by_class_name('navbar-toggler-icon').click()
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.ID, "links_menu"))
+            )
+        finally:
+            menu_open = driver.find_element_by_id('links_menu')
+            self.assertTrue(menu_open.is_displayed())
 
     def test_select_image_alert(self):
         ''' Tests alert fires
