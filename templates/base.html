@@ -40,39 +40,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/style.css') }}" />
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static', filename='stylesheet/album.css') }}" rel="stylesheet">
-    <title>Street art - {% block title %}{% endblock %} </title>
-    <style>
-        #visits tr:nth-child(even) {
-            background-color: #FFFFFF;
-            }
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-    
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+    <!-- Custom styles outside main template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/album.css') }}" />
+    <title>Street art photos by Simon Howlett- {% block title %}{% endblock %} </title>
     {% endblock %}
 </head>
-
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-md-7 py-4">
                     <h4 class="text-white">About</h4>
-                    <p class="text-muted">Hello, I'm Simon, I like to travel to odd places when I get the chance.
+                    <p class="text-muted">Hello, I'm Simon Howlett, I like to travel to odd places when I get the chance.
                         When I am in these places I like to document the often ephemeral street art that fills up walls and spaces.
                     </p>
                 </div>

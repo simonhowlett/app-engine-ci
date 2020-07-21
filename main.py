@@ -6,7 +6,6 @@ Expect some street art photo's or something.
 """
 
 import os
-
 from flask import Flask
 from flask import render_template
 import datetime

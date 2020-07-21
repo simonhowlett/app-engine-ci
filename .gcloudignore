@@ -13,6 +13,8 @@
 .git
 .gitignore
 .travis.yml
+.circleci/
+.vscode/
 
 # Python pycache:
 __pycache__/
@@ -21,15 +23,11 @@ __pycache__/
 
 # Venv, spurious files etc
 env/
-test/
-.circleci/
-.vscode/
-node_modules/
-keys/
 helpers/
+test/
+keys/
+node_modules/
 readme.md
 app_engine.code-workspace
-client-secret.json
-credentials.tar.gz
-credentials.tar.gz.enc
 travis_ci_scratch
+package-lock.json

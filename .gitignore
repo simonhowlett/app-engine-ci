@@ -5,7 +5,5 @@ node_modules/
 __pycache__/
 keys/
 app_engine.code-workspace
-client-secret.json
-credentials.tar.gz
-credentials.tar.gz.enc
 travis_ci_scratch
+package-lock.json
