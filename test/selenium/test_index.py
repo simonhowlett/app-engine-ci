@@ -1,4 +1,4 @@
-"""Initial Tests
+"""Homepage Tests
 
 Confirms website is up and is serving content
 Checks Alert Fires on selecing an image view button
@@ -6,26 +6,27 @@ Checks Debug content is hidden or available depending on URL params sent.
 Currently these use a local webdriver instance, remote scripts will follow.
 
 TODO: Lots of tests as needed, remote executing script, logging, etc etc.
+Way too much repeated code...
 """
 
 __version__ = 0.2
 
 import unittest
 import time
-import os
 import sys
-import re
+import datetime
+from time import time as tm
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
 test_url = "http://127.0.0.1:8080/"
 debug_url = test_url + "?debug=true"
+start_time = datetime.datetime.now()
 
 
 class simple_tests(unittest.TestCase):
@@ -33,14 +34,23 @@ class simple_tests(unittest.TestCase):
         self.driver = webdriver.Chrome()
 
     def test_title_content(self):
-        ''' Tests page is loaded
+        ''' Tests initial album page is loaded, and content is present
 
         '''
         driver = self.driver
+        tStart = tm()
         driver.get(test_url)
         self.assertIn("Homepage", driver.title)
+        footer = self.driver.find_element_by_link_text("Back to top")
+        self.assertTrue(footer.is_displayed())
+        content = self.driver.find_element_by_id('paris_01')
+        self.assertTrue(content.is_displayed())
+        tEnd = tm()
+        time_span = tEnd - tStart
+        print('Started', start_time)
+        print(f'Test: {self} took {time_span} seconds duration')
 
-    def test_menu_Access(self):
+    def test_menu_access(self):
         ''' Tests drop down menu doesn't break
 
         '''
@@ -77,7 +87,7 @@ class simple_tests(unittest.TestCase):
         caption = driver.find_element_by_name('caption')
         self.assertEqual('Unknown, Paris, 2018', caption.text)
         driver.find_element_by_name('back_to_home').click()
-        time.sleep(2)
+        tm.sleep(2)
         self.assertIn("Homepage", driver.title)
 
     def test_debug(self):
