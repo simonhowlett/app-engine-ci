@@ -1,20 +1,15 @@
-"""Initial Tests
+"""Initial Local Tests
 
-Confirms Signup page is loaded
-Confirms fields can be completed
+Confirms Signup page is loaded, fields can be completed
 Confirms password validation is working on identical values.
-Currently these use a local webdriver instance, remote scripts will follow.
 
 TODO: Commit Test Status and Timings to Cloud datastore,
 remote executing script, logging, etc etc.
 """
 
-__version__ = 0.2
+__version__ = 0.3
 
 import unittest
-import os
-import sys
-import re
 import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -29,15 +24,21 @@ debug_url = test_url + "?debug=true"
 start_time = datetime.datetime.now()
 
 
-class simple_tests(unittest.TestCase):
+class TestSignup(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.driver.get(test_url)
+        global driver
+        driver = self.driver
+        global tStart
+        tStart = time()
+        global tEnd
+        tEnd = time()
 
     def test_pwd_match_continue(self):
-        driver = self.driver
-        driver.get(test_url)
-        self.assertIn("Street art - Info", driver.title)
-        tStart = time()
+
+        self.assertIn(
+            "Street art photos by Simon Howlett- Info Sign Up", driver.title)
         firstName = self.driver.find_element_by_name(
             'firstName').send_keys('tester')
         lastName = self.driver.find_element_by_name(
@@ -59,29 +60,16 @@ class simple_tests(unittest.TestCase):
         pwd.send_keys('8ightChar')
         cnf_pwd.send_keys('8ightChar')
         submit.click()
-        self.assertIn("Street art - Signed Up!", driver.title)
+        self.assertIn(
+            "Street art photos by Simon Howlett- Signed Up!", driver.title)
+
+    def tearDown(self):
         tEnd = time()
         time_span = tEnd - tStart
         print('Started', start_time)
         print(f'Test: {self} took {time_span} seconds duration')
-
-    # def store_time(dt):
-        # entity = datastore.Entity(key=datastore_client.key('test_time'))
-        # entity.update({
-        #     'timestamp': start_time,
-        #     'testname': unittest.TestCase,
-        #     'timeSpan': time_span
-        #     })
-        # datastore_client.put(entity)
-
-    def tearDown(self):
         self.driver.close()
 
 
-# next lines run the tests as a suite, outputting each test's results.
-# suite = unittest.TestLoader().loadTestsFromTestCase(simple_tests)
-# unittest.TextTestRunner(verbosity=2).run(suite)
-
-# run from command line, replace the commented lines with those above
 if __name__ == "__main__":
     unittest.main()
