@@ -9,6 +9,7 @@ remote executing script, logging, etc etc.
 
 __version__ = 0.3
 
+import sys
 import unittest
 import datetime
 from selenium import webdriver
@@ -19,10 +20,12 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from time import time
 
-test_url = "http://127.0.0.1:8080/info"
+local_test = "http://127.0.0.1:8080/info"
+prod_test = "https://durable-sunspot-277600.appspot.com/info"
+test_url = prod_test if sys.argv[1] == 'prod' else local_test
+
 debug_url = test_url + "?debug=true"
 start_time = datetime.datetime.now()
-
 
 class TestSignup(unittest.TestCase):
     def setUp(self):
@@ -68,8 +71,8 @@ class TestSignup(unittest.TestCase):
         time_span = tEnd - tStart
         print('Started', start_time)
         print(f'Test: {self} took {time_span} seconds duration')
-        self.driver.close()
+        driver.close()
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)

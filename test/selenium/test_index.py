@@ -11,6 +11,7 @@ Way too much repeated code...
 __version__ = 0.3
 
 import unittest
+import sys
 import datetime
 from time import time
 from selenium import webdriver
@@ -21,7 +22,9 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-test_url = "http://127.0.0.1:8080/"
+local_test = "http://127.0.0.1:8080/"
+prod_test = "https://durable-sunspot-277600.appspot.com/"
+test_url = prod_test if sys.argv[1] == 'prod' else local_test
 debug_url = test_url + "?debug=true"
 
 
@@ -90,4 +93,4 @@ class TestsHomePage(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)
