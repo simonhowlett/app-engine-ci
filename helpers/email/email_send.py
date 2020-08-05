@@ -4,15 +4,13 @@ from string import Template
 from pathlib import Path
 
 
-''' use simonhowlett.dev@gmail.com '''
-
 html = Template(Path('index.html').read_text())
 email = EmailMessage()
-email['from'] = 'Simon Howlett'
-email['to'] = 'simonjhowlett@gmail.com'
-email['subject'] = 'Testing Python Script'
+email['from'] = ''
+email['to'] = ''
+email['subject'] = 'Subject'
 
-email.set_content(html.substitute({'name': 'Simon'}), 'html')
+email.set_content(html.substitute({'name': 'Joe Bloggs'}), 'html')
 
 with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp:
     smtp.ehlo()
