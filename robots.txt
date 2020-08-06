@@ -1,0 +1,6 @@
+User-agent: * 
+Disallow: /
+Disallow: /visit
+Disallow: /info
+Disallow: /confirmation
+Disallow: /image/*
