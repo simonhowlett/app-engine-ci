@@ -6,9 +6,10 @@ Expect some street art photo's or something.
 """
 
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import datetime
-from google.cloud import datastore
+from google.cloud import datastore, ndb
+
 
 # [START gae_python38_app]
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -42,13 +43,33 @@ def info():
     return render_template('info.html')
 
 
-@app.route('/confirmation/', methods=['POST', 'GET'])
+
+class Contact(ndb.Model):
+    firstName = ndb.StringProperty()
+    lastName = ndb.StringProperty()
+    email = ndb.StringProperty()
+    comment = ndb.StringProperty()
+
+
+@app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
-        data = request.form.to_dict()
-        print(data) # TODO: remove this line
-        return render_template('confirmation.html')
+        client = ndb.Client()
+        with client.context():
+            data = request.form.to_dict()
+            print(data)
+            contact = Contact(firstName=data['firstName'],
+                              lastName=data['lastName'],
+                              email=data['email'],
+                              comment=data['comment'])
+            contact.put()
+        return redirect('confirmation.html')
     else: 'something went wrong, please try again'
+
+
+@app.route('/<string:page_name>')
+def html_page(page_name):
+    return render_template(page_name)
 
 
 def store_time(dt):
