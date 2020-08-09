@@ -6,8 +6,7 @@ Expect some street art photo's or something.
 """
 
 import os
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
 import datetime
 from google.cloud import datastore
 
@@ -25,16 +24,6 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/info/')
-def info():
-    return render_template('info.html')
-
-
-@app.route('/confirmation/', methods=['GET', 'POST'])
-def confirmation():
-    return render_template('confirmation.html')
-
-
 @app.route('/image/')
 def image():
     return render_template('image.html')
@@ -46,6 +35,20 @@ def visit():
     times = fetch_times(10)
     return render_template(
         'visit.html', times=times)
+
+
+@app.route('/info/')
+def info():
+    return render_template('info.html')
+
+
+@app.route('/confirmation/', methods=['POST', 'GET'])
+def submit_form():
+    if request.method == 'POST':
+        data = request.form.to_dict()
+        print(data) # TODO: remove this line
+        return render_template('confirmation.html')
+    else: 'something went wrong, please try again'
 
 
 def store_time(dt):
