@@ -10,12 +10,12 @@
 
   // Check Whether both password fields match
   
-  function checkPassword(form) {
-    password1 = form.pwd.value;
-    password2 = form.cnf_pwd.value;
+  function checkEmail(form) {
+    email = form.email.value;
+    email2 = form.email2.value;
 
-    if (password1 != password2) {
-      alert("\nPassword did not match: Please try again...")
+    if (email != email2) {
+      alert("\nEmails entered did not match: Please try again...")
       return false;
     }
 
@@ -37,30 +37,28 @@
     
     <div class="album py=5 bg-light" align="center">
     <br />
-      <form onSubmit="return checkPassword(this)" action='../confirmation/' method="post" >
+      <form onSubmit="return checkEmail(this)" action='../submit_form' method="post" >
       <table border="0" cellpadding="3">
       <tr>
         <td><label for="firstName" class="lead text-muted" required>*First name:</label></td>
-        <td><input type="text" id="firstName" name="firstName" required></td>
+        <td><input type="text" cols="50" id="firstName" name="firstName" required></td>
       </tr>
       <tr>
         <td><label for="lastName" class="lead text-muted">*Last Name:</label></td>
-        <td><input type="text" id="lastName" name="lastName" required></td>
+        <td><input type="text" cols="50" id="lastName" name="lastName" required></td>
       </tr>
       <tr>
         <td><label for="email" class="lead text-muted">*Email:</label></td>
-        <td><input type="email" id="email" name="email" required></td>
+        <td><input type="email" cols="50" id="email" name="email" required></td>
       </tr>
       <tr>
-        <td><label for="pwd" class="lead text-muted">*Password:</label></td>
-        <td><input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-          title="Must contain at least one number and one uppercase and lowercase letter, 
-          and at least 8 characters" required></td>
+        <td><label for="email2" class="lead text-muted">*Confirm Email:</label></td>
+        <td><input type="email" cols="50" id="email2" name="email2" required></td>
+      </tr>
+      <tr>
+        <td><label for="comment" class="lead text-muted">*Question:</label></td>
+        <td><textarea rows="4" cols="50" name="comment" onfocus="this.value=''">Enter your question here...</textarea></td>
           </td>
-      </tr>
-      <tr>
-        <td><label for="cnf_pwd" class="lead text-muted">*Confirm Password:</label></td>
-        <td><input type="password" id="cnf_pwd" name="cnf_pwd" required></td>
       </tr>
       <tr>
         <td></td>
