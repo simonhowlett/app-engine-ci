@@ -43,7 +43,6 @@ def info():
     return render_template('info.html')
 
 
-
 class Contact(ndb.Model):
     firstName = ndb.StringProperty()
     lastName = ndb.StringProperty()
@@ -54,17 +53,21 @@ class Contact(ndb.Model):
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
-        client = ndb.Client()
-        with client.context():
-            data = request.form.to_dict()
-            print(data)
-            contact = Contact(firstName=data['firstName'],
-                              lastName=data['lastName'],
-                              email=data['email'],
-                              comment=data['comment'])
-            contact.put()
+        try:
+            client = ndb.Client()
+            with client.context():
+                data = request.form.to_dict()
+                print(data)
+                contact = Contact(firstName=data['firstName'],
+                                  lastName=data['lastName'],
+                                  email=data['email'],
+                                  comment=data['comment'])
+                contact.put()
+        except:
+            return 'Did not send, please try again'
         return redirect('confirmation.html')
-    else: 'something went wrong, please try again'
+    else:
+        'something went wrong, please try again'
 
 
 @app.route('/<string:page_name>')
