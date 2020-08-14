@@ -6,4 +6,3 @@ __pycache__/
 keys/
 app_engine.code-workspace
 travis_ci_scratch
-package-lock.json

@@ -27,7 +27,12 @@ helpers/
 test/
 keys/
 node_modules/
+test-results/
 readme.md
 app_engine.code-workspace
 travis_ci_scratch
-package-lock.json
+pull_request_template.md
+README.md
+test_contact.py
+test_runner.py
+
