@@ -24,7 +24,7 @@ Todo:
 
 Notes:
  - /visit/ - Collects/Displays visitor timestamps, just a simple datastore write example.
- - /info/ - sample user signup form, needs to be forced to be https, and add values to datastore
+ - /info/ - sample user contact form, commits comments to firestore/datastore
  - ?debug=true URL Query String wil reveal a test menu, in time there will be more hidden functions.
 
 
