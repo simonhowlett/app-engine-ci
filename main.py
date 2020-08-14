@@ -44,8 +44,7 @@ def info():
 
 
 class Contact(ndb.Model):
-    firstName = ndb.StringProperty()
-    lastName = ndb.StringProperty()
+    name = ndb.StringProperty()
     email = ndb.StringProperty()
     comment = ndb.StringProperty()
 
@@ -58,8 +57,7 @@ def submit_form():
             with client.context():
                 data = request.form.to_dict()
                 print(data)
-                contact = Contact(firstName=data['firstName'],
-                                  lastName=data['lastName'],
+                contact = Contact(name=data['name'],
                                   email=data['email'],
                                   comment=data['comment'])
                 contact.put()
