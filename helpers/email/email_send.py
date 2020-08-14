@@ -18,4 +18,3 @@ with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp:
     smtp.login('amend', 'amend')
     smtp.send_message(email)
     print('email sent')
-    

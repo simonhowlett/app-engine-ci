@@ -1,5 +1,5 @@
 '''
-twitter bot, uses tweepy to interact with the twitter dev API
+twitter bot shell, uses tweepy to interact with the twitter dev API
 Requires a twitter dev account.
 Current Simple Functions Favourite the latest given # of tweets,
 passed to the command line.
