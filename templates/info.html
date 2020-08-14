@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Info Sign Up{% endblock %}
+{% block title %}Contact me{% endblock %}
 {% block head %}
 {{ super() }}
 
@@ -31,7 +31,7 @@
     <div class="container">
       <h1>Adventures in Street Art</h1>
       <br>
-      <p class="lead text-muted">This will become a hidden-ish info page. For now, create a test account!</p>
+      <p class="lead text-muted">Any questions, credits, info on these images, please get in touch!</p>
     <br />
     </div>
     
@@ -40,34 +40,26 @@
       <form onSubmit="return checkEmail(this)" action='../submit_form' method="post" >
       <table border="0" cellpadding="3">
       <tr>
-        <td><label for="firstName" class="lead text-muted" required>*First name:</label></td>
-        <td><input type="text" cols="50" id="firstName" name="firstName" required></td>
+        <td><input type="text" size="50" id="name" name="name" placeholder="Name" required></td>
       </tr>
       <tr>
-        <td><label for="lastName" class="lead text-muted">*Last Name:</label></td>
-        <td><input type="text" cols="50" id="lastName" name="lastName" required></td>
+        <td><input type="email" size="50" id="email" name="email" placeholder="Email" required></td>
       </tr>
       <tr>
-        <td><label for="email" class="lead text-muted">*Email:</label></td>
-        <td><input type="email" cols="50" id="email" name="email" required></td>
+        <td><input type="email" size="50" id="email2" name="email2" placeholder="Confirm Email" required></td>
       </tr>
       <tr>
-        <td><label for="email2" class="lead text-muted">*Confirm Email:</label></td>
-        <td><input type="email" cols="50" id="email2" name="email2" required></td>
-      </tr>
-      <tr>
-        <td><label for="comment" class="lead text-muted">*Question:</label></td>
-        <td><textarea rows="4" cols="50" name="comment" onfocus="this.value=''">Enter your question here...</textarea></td>
+        <td><textarea rows="5" cols="49" name="comment" placeholder="Please add your comment/question here..."></textarea></td>
           </td>
       </tr>
       <tr>
-        <td></td>
         <td align="right">
           <input type="reset" value="Reset" id="reset" name="reset" 
             class="btn-group btn btn-sm btn-outline-secondary">
           &nbsp;
-          <input type="submit" value="Sign up!" id="submit" name="submit" 
-            class="btn-group btn btn-sm btn-outline-secondary"></td>
+          <input type="submit" value="Send it!" id="submit" name="submit" 
+            class="btn-group btn btn-sm btn-outline-secondary">
+          </td>
       </tr>
     </table>
     </form>

@@ -18,6 +18,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from time import time
 
 local_test = "http://127.0.0.1:8080/info"
@@ -26,6 +27,7 @@ test_url = prod_test if sys.argv[1] == 'prod' else local_test
 
 debug_url = test_url + "?debug=true"
 start_time = datetime.datetime.now()
+
 
 class TestSignup(unittest.TestCase):
     def setUp(self):
@@ -38,33 +40,25 @@ class TestSignup(unittest.TestCase):
         global tEnd
         tEnd = time()
 
-    def test_pwd_match_continue(self):
+    def test_success_submit(self):
 
         self.assertIn(
-            "Street art photos by Simon Howlett- Info Sign Up", driver.title)
-        firstName = self.driver.find_element_by_name(
-            'firstName').send_keys('tester')
-        lastName = self.driver.find_element_by_name(
-            'lastName').send_keys('testing')
-        email = self.driver.find_element_by_name(
+            "Street art photos by Simon Howlett- Contact me", driver.title)
+        name = driver.find_element_by_name(
+            'name').send_keys('tester mctesterson')
+        email = driver.find_element_by_name(
             'email').send_keys('testing@test.com')
-        pwd = self.driver.find_element_by_name('pwd')
-        pwd.send_keys('8ightChar')
-        cnf_pwd = self.driver.find_element_by_name('cnf_pwd')
-        cnf_pwd.send_keys('8ightchar')
-        submit = self.driver.find_element_by_name('submit')
+        email2 = driver.find_element_by_name(
+            'email2').send_keys('testing@test.com')
+        comment = driver.find_element_by_name('comment').send_keys('Funky Cold Medina')
+        submit = driver.find_element_by_name('submit')
         submit.click()
-        alert_obj = driver.switch_to.alert
-        self.assertEqual(
-            '\nPassword did not match: Please try again...', alert_obj.text)
-        alert_obj.accept()
-        pwd.clear()
-        cnf_pwd.clear()
-        pwd.send_keys('8ightChar')
-        cnf_pwd.send_keys('8ightChar')
-        submit.click()
-        self.assertIn(
-            "Street art photos by Simon Howlett- Signed Up!", driver.title)
+        # conf_msg = driver.find_element_by_id('conf_msg')
+        try:
+            element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.ID, "conf_msg")))
+        finally:
+                self.assertIn("Street art photos by Simon Howlett- Thanks for your message!", driver.title)
 
     def tearDown(self):
         tEnd = time()
