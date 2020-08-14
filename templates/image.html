@@ -1,31 +1,35 @@
 {% extends "base.html" %}
-{% block title %} Full Size Image {% endblock %}
+{% block title %} Full Size Image{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
 {% block content %}
+
 <main role="main">
     <section class="jumbotron text-center">
         <div class="container">
             <h1>Adventures in Street Art</h1>
-        </div>
-        </p>
         <p name='caption'><script>document.write(getUrlParameter('caption'));</script></p>
-        <div>
-        <img id="p1" width="98%" src="" />
-        <script>
-            document.getElementById("p1").src = img_path;
-        </script>
+        </div>
+        <div class="album py=5 bg-light" align="center">
+            <img id="p1" width="98%" src="" />
+                <script>
+                    document.getElementById("p1").src = img_path;
+                </script>
         </div>
     </section>
-    
-    {% endblock %}
-    {% block footer %}
+{% endblock %}
+{% block footer %}
     <footer class="text-muted">
         <div class="container">
-            <p class="float-right">
+                <p class="float-right">
                 <a href="/" name='back_to_home'>Back to main page</a>
-            </p>
+                </p>
         </div>
     </footer>
-    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='assets/dist/js/bootstrap.bundle.js') }}"></script>
+</main>
+{% endblock %} 
