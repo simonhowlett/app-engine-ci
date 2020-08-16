@@ -34,6 +34,7 @@ class TestsHomePage(unittest.TestCase):
         global driver
         driver = self.driver
         driver.get(test_url)
+        driver.maximize_window()
         global tStart
         tStart = time()
         global tEnd
@@ -42,9 +43,9 @@ class TestsHomePage(unittest.TestCase):
     def test_title_content(self):
         ''' Tests initial album page is loaded, and content is present'''
         self.assertIn("Homepage", driver.title)
-        footer = self.driver.find_element_by_link_text("Back to top")
+        footer = driver.find_element_by_link_text("Back to top")
         self.assertTrue(footer.is_displayed())
-        content = self.driver.find_element_by_id('paris_01')
+        content = driver.find_element_by_id('paris_01')
         self.assertTrue(content.is_displayed())
 
     def test_menu_access(self):
@@ -89,7 +90,7 @@ class TestsHomePage(unittest.TestCase):
         tEnd = time()
         time_span = tEnd - tStart
         print(f'Test: {self} took {time_span} seconds duration')
-        self.driver.close()
+        driver.close()
 
 
 if __name__ == "__main__":
