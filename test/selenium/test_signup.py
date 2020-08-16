@@ -7,7 +7,7 @@ TODO: Commit Test Status and Timings to Cloud datastore,
 remote executing script, logging, etc etc.
 """
 
-__version__ = 0.3
+__version__ = 0.4
 
 import sys
 import unittest
@@ -32,9 +32,10 @@ start_time = datetime.datetime.now()
 class TestSignup(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
-        self.driver.get(test_url)
         global driver
         driver = self.driver
+        driver.get(test_url)
+        driver.maximize_window()
         global tStart
         tStart = time()
         global tEnd
