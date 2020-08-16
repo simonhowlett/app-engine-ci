@@ -62,10 +62,10 @@ def submit_form():
                                   comment=data['comment'])
                 contact.put()
         except:
-            return 'Did not send, please try again'
+            return render_template('form_failed.html')
         return redirect('confirmation.html')
     else:
-        'something went wrong, please try again'
+        return render_template('form_failed.html')
 
 
 @app.route('/<string:page_name>')
