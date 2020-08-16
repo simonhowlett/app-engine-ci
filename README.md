@@ -16,15 +16,17 @@ Environment:
 - CI/CD integration/reporting/unit tests etc (no real reason to build on both travis and circle, more than seeing the differences).
 - Jira Integration
 
-Todo:
+Notes:
+ - /visit/ - Collects/Displays visitor timestamps, just a simple datastore write example.
+ - /info/ - sample user contact form, commits comments to firestore/datastore, with confirmation and failure responses
+ - ?debug=true URL Query String wil reveal a test menu, in time there will be more hidden functions.
+ - Directory of helper files, some are unrelated examples that are for reference/working into something else.
+ 
+ Todo:
 - Image manipulation using gcloud's image framework, pulling from storage etc (tbd)
 - Auto deploy on branch name
 - Test output reporting
-- Fake image ordering option, more for test examples than anything else.
-
-Notes:
- - /visit/ - Collects/Displays visitor timestamps, just a simple datastore write example.
- - /info/ - sample user contact form, commits comments to firestore/datastore
- - ?debug=true URL Query String wil reveal a test menu, in time there will be more hidden functions.
+- GCloud notifications on new entity created
+- Comments display API / View
 
 
