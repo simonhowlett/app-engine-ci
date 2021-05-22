@@ -4,9 +4,6 @@ Use the output to create csv file for easier consumption
 Date the export file
 '''
 '''
-Issues: 
-- NavexEngage Export needs a top level attribute or script will fail
-- ISO date format designation fails the test, remove, or handle.
 ToDo:
 - Sort folder structure correctly
 - Make file selectable
@@ -26,7 +23,7 @@ with open('_add_Filename.json') as json_file:
 employee_data = data['emp_details']
   
 # now we will open a file for writing
-data_file = open(dt_date.strftime("%d+%b+%Y") + '-navexEngageUsers.csv', 'w', newline='')
+data_file = open(dt_date.strftime("%d+%b+%Y") + '-export.csv', 'w', newline='')
 
 # create the csv 
 csv_writer = csv.writer(data_file) 
