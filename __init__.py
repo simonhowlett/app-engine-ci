@@ -1,2 +1,2 @@
-from Flask import app
+from flask import app
 app.static_folder = 'static'
