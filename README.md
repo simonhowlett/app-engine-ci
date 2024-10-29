@@ -1,4 +1,4 @@
-# Street Art Photography Website [![Build Status](https://travis-ci.com/simonhowlett/app-engine-ci.svg?branch=master)](https://travis-ci.com/simonhowlett/app-engine-ci) |  [![simonhowlett](https://circleci.com/gh/simonhowlett/app-engine-ci.svg?style=svg)](https://app.circleci.com/pipelines/github/simonhowlett/app-engine-ci)
+# Street Art Photography Website | [![simonhowlett](https://circleci.com/gh/simonhowlett/app-engine-ci.svg?style=svg)](https://app.circleci.com/pipelines/github/simonhowlett/app-engine-ci)
 
 
 Simple Workflow for a release architecture proven for a simple website app build.
