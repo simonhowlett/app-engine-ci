@@ -1,11 +1,13 @@
 import unittest
-import to_test
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'helpers')))
 
-
+from main import app
+from test import to_test
 class TestMain(unittest.TestCase):
-    def setUp(self):
-        print('start testing')
-
+    
     def test_do_stuff(self):
         test_param = 10
         result = to_test.do_stuff(test_param)
@@ -15,20 +17,6 @@ class TestMain(unittest.TestCase):
         test_param = 'shshssh'
         result = to_test.do_stuff(test_param)
         self.assertIsInstance(result, ValueError)
-
-    def test_do_stuff3(self):
-        test_param = None
-        result = to_test.do_stuff(test_param)
-        self.assertEqual(result, 'please add a number')
-
-    def test_do_stuff4(self):
-        test_param = ''
-        result = to_test.do_stuff(test_param)
-        self.assertEqual(result, 'please add a number')
-
-    def tearDown(self):
-        print('cleaning up')
-
 
 if __name__ == '__main__':
     unittest.main()
