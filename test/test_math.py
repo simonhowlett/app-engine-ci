@@ -1,9 +1,12 @@
 import unittest
-
+import sys
+import os
+from main import app
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'helpers')))
 
 def IsOdd(n):
     return n % 2 == 1
-
 
 class IsOddTests(unittest.TestCase):
 
