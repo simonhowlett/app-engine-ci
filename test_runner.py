@@ -4,7 +4,7 @@
 
 import unittest
 loader = unittest.TestLoader()
-start_dir = 'test/selenium'
+start_dir = 'selenium_tests'
 suite = loader.discover(start_dir)
 
 runner = unittest.TextTestRunner()
