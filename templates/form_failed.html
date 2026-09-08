@@ -11,7 +11,13 @@
     <div class="container">
       <h1>Adventures in Street Art</h1>
       <br>
-      <p class="lead text-muted" id='conf_msg'>OOPS! Something went from with the form submission, please go back and try again</p>
+      <p class="lead text-muted" id='conf_msg'>
+        {% if error %}
+          {{ error }}
+        {% else %}
+          OOPS! Something went from with the form submission, please go back and try again
+        {% endif %}
+      </p>
     <br />
     </div>
 
