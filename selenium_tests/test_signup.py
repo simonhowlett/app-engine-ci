@@ -24,6 +24,7 @@ import datetime
 local_test = "http://127.0.0.1:8080/info"
 prod_test = "https://durable-sunspot-277600.appspot.com/info"
 
+
 # Provide a default value for sys.argv[1]
 test_env = sys.argv[1] if len(sys.argv) > 1 else 'local'
 test_url = prod_test if test_env == 'prod' else local_test

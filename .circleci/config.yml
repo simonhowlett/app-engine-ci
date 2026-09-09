@@ -1,25 +1,50 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@1.5.0
-
 jobs:
-  build-and-test:
+  build:
     docker:
-      - image: cimg/python:3.12.7
+      - image: cimg/python:3.12
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
-          pip-dependency-file: test-requirements.txt
       - run:
-          name: Run tests
+          name: Install dependencies
           command: |
-            python -m venv venv
-            . venv/bin/activate
+            python -m venv .venv
+            . .venv/bin/activate
+            python -m pip install --upgrade pip
             pip install -r requirements.txt
-            pytest test/ --html=report.html
+            pip install -r test-requirements.txt
+
+  test:
+    docker:
+      - image: cimg/python:3.12
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            python -m venv .venv
+            . .venv/bin/activate
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+            pip install -r test-requirements.txt
+      - run:
+          name: Run test suite
+          command: |
+            . .venv/bin/activate
+            mkdir -p test-results
+            pytest test/ test/test_form_security.py -q --maxfail=1 --junitxml=test-results/junit.xml
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: test-results
+
 workflows:
+  version: 2
   default:
     jobs:
-      - build-and-test
+      - build
+      - test:
+          requires:
+            - build

@@ -36,7 +36,8 @@
     
     <div class="album py=5 bg-light" align="center">
     <br />
-      <form onSubmit="return checkEmail(this)" action='../submit_form' method="post" >
+      <form onSubmit="return checkEmail(this)" action="{{ url_for('submit_form') }}" method="post" >
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
       <table border="0" cellpadding="3">
       <tr>
         <td><input type="text" size="50" id="name" name="name" placeholder="Name" required></td>
