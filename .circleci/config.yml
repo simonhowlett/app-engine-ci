@@ -1,7 +1,21 @@
 version: 2.1
 
 jobs:
-  build-and-test:
+  build:
+    docker:
+      - image: cimg/python:3.12
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            python -m venv .venv
+            . .venv/bin/activate
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+            pip install -r test-requirements.txt
+
+  test:
     docker:
       - image: cimg/python:3.12
     steps:
@@ -18,10 +32,19 @@ jobs:
           name: Run test suite
           command: |
             . .venv/bin/activate
-            pytest test/ test/test_form_security.py -q --maxfail=1
+            mkdir -p test-results
+            pytest test/ test/test_form_security.py -q --maxfail=1 --junitxml=test-results/junit.xml
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: test-results
 
 workflows:
   version: 2
   default:
     jobs:
-      - build-and-test
+      - build
+      - test:
+          requires:
+            - build
