@@ -27,6 +27,6 @@ pytest-html==4.1.1
 redis==5.2.0
 requests==2.32.3
 rsa==4.9
-urllib3==2.2.3
+urllib3==2.7.0
 Werkzeug==3.0.6
 gunicorn==23.0.0
